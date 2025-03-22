@@ -24,3 +24,21 @@ class Appointment(models.Model):
     class Meta:
         verbose_name = 'Запись на прием'
         verbose_name_plural = 'Записи на приемы'
+
+
+class Review(models.Model):
+    client_image = models.ImageField(
+        verbose_name='Фотография клиента',
+        upload_to='client_image/'
+    )
+    client_name = models.CharField(
+        verbose_name='ФИО клиента',
+        max_length=255
+    )
+    role = models.CharField(
+        verbose_name='Профессия клиента',
+        max_length=255
+    )
+    text = models.TextField(
+        verbose_name='Отзыв'
+    )
